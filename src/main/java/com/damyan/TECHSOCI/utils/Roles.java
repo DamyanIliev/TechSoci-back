@@ -1,0 +1,32 @@
+package com.damyan.TECHSOCI.utils;
+
+public enum Roles {
+    ROLE_USER("ROLE_USER"),
+    ROLE_ADMIN("ROLE_ADMIN");
+
+    private final String value;
+
+    Roles(String value) {
+        this.value = value;
+    }
+
+    @Override
+    public String toString() {
+        return value;
+    }
+
+    public String getValue(){
+        return this.value;
+    }
+
+    public static Roles getValue(String value) {
+        for (Roles role : Roles.values()) {
+            if (role.getValue().equals(value)) {
+                return role;
+            }
+        }
+        return null;
+    }
+
+
+}
